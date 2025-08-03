@@ -1,13 +1,12 @@
 import React from 'react'
 import { useState } from 'react';
 
-function Login() {
+function Login({handleLogin}) {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const submitHandler =(e)=>{
         e.preventDefault();
-        console.log('email is',email);
-        console.log('password is',password);
+        handleLogin(email,password);
         setEmail("")
         setPassword("")
         
@@ -32,7 +31,7 @@ function Login() {
                 }}
                 
                 className='border-2 required text-xl mt-5 text-white outline-none bg-transparent placeholder:text-gray-400  border-emerald-600 py-3  px-5 rounded-full'type="password" placeholder='Enter your password' />
-                <button className='border-2 text-xl text-black outline-none mt-4 bg-transparent text-white bg-emerald-600 py-3  px-5 rounded-full'>Log in</button>
+                <button className='border-2 text-xl text-black outline-none mt-12  text-white bg-emerald-600 py-3  px-5 rounded-full'>Log in</button>
             </form>
         </div>
     </div>
